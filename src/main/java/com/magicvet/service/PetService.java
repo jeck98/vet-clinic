@@ -6,7 +6,7 @@ import main.java.com.magicvet.model.Pet;
 
 public class PetService {
 
-    private static String DOG_TYPE = "dog";
+    private static final String DOG_TYPE = "dog";
 
     public Pet registerNewPet() {
         Pet pet = new Pet();
@@ -27,7 +27,7 @@ public class PetService {
         Pet pet = buildPet(DOG_TYPE);
         Dog dog = petToDog(pet);
 
-        System.out.print("Size: (xS / S / M / L / XXL: ");
+        System.out.print("Size: (xS / S / M / L / XXL): ");
         dog.setSize(Main.SCANNER.nextLine());
 
         return dog;
