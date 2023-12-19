@@ -9,13 +9,13 @@ public class Client {
    private String email;
    private Pet pet;
 
-   @Override
+  @Override
    public String toString() {
       return "Client {"
               + "\n\tfirstName = " + firstName
               + ", lastName = " + lastName
               + ", email = " + email
-              + ",\n\tpet = " + pet
+              + "\n\tPet: " + pet
               + "\n";
    }
 
@@ -29,6 +29,7 @@ public class Client {
               && Objects.equals(email, client.email)
               && Objects.equals(pet, client.pet);
    }
+
 
    @Override
    public int hashCode() {
