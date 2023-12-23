@@ -4,7 +4,7 @@ import main.java.com.magicvet.service.PetService;
 
 import java.util.Objects;
 
-public class Pet {
+public abstract class Pet {
 
     private String type;
     private String sex;

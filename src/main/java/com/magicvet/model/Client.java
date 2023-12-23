@@ -15,8 +15,7 @@ public class Client {
               + "\n\tfirstName = " + firstName
               + ", lastName = " + lastName
               + ", email = " + email
-              + "\n\tPet: " + pet
-              + "\n";
+              + "\n\tPet: " + pet;
    }
 
    @Override
