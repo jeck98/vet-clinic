@@ -12,7 +12,6 @@ public abstract class Pet {
     private String name;
     private String ownerName;
 
-
     @Override
     public String toString() {
         return "type = " + type

@@ -18,6 +18,11 @@ public class Dog extends Pet {
         this.size = size;
     }
 
+    public Dog(String name, String age) {
+        setName(name);
+        setAge(age);
+    }
+
     @Override
     public String toString() {
         return "type = " + getType()
