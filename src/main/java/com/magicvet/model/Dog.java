@@ -5,8 +5,11 @@ import java.util.Objects;
 public class Dog extends Pet {
 
     private Size size;
+    private HealthState healthState;
 
     public Dog() {}
+
+
 
     public Dog(Size size) {
         this.size = size;
@@ -15,6 +18,10 @@ public class Dog extends Pet {
     public Dog(String name, String age) {
         setName(name);
         setAge(age);
+    }
+
+    public Dog(HealthState healthState) {
+        this.healthState = healthState;
     }
 
     @Override
@@ -47,6 +54,10 @@ public class Dog extends Pet {
 
     public Size getSize() {
         return size;
+    }
+
+    public HealthState getHealthState() {
+        return healthState;
     }
 
     public enum Size {

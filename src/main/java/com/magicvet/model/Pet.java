@@ -1,7 +1,5 @@
 package main.java.com.magicvet.model;
 
-import main.java.com.magicvet.service.PetService;
-
 import java.util.Objects;
 
 public abstract class Pet {
@@ -11,6 +9,7 @@ public abstract class Pet {
     private String age;
     private String name;
     private String ownerName;
+
 
     @Override
     public String toString() {
@@ -74,4 +73,25 @@ public abstract class Pet {
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
     }
+
+
+    public enum HealthState {
+        NORMAL(3),
+        MEDIUM(2),
+        BAD(1)
+        ;
+
+        private final int value;
+
+        HealthState(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+
+
 }
