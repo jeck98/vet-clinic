@@ -1,11 +1,15 @@
 package main.java.com.magicvet.model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Dog extends Pet {
 
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm dd/MM/yyyy");
     private Size size;
     private HealthState healthState;
+    private final LocalDateTime registrationDate = LocalDateTime.now();
 
     public Dog() {}
 
@@ -26,12 +30,13 @@ public class Dog extends Pet {
 
     @Override
     public String toString() {
-        return "type = " + getType()
+        return "{type = " + getType()
                 + ", name = " + getName()
                 + ", age = " + getAge()
                 + ", sex = " + getSex()
                 + ", size = " + size
-                + " }";
+                + ", registrationDate = " + registrationDate.format(FORMATTER)
+                + "}";
     }
 
     @Override

@@ -18,12 +18,12 @@ public abstract class Pet {
 
     @Override
     public String toString() {
-        return "type = " + type
+        return "{type = " + type
                 + ", sex = " + sex
                 + ", age = " + age
                 + ", name = " + name
                 + ", registrationDate = " + registrationDate.format(FORMATTER)
-                + " }";
+                + "}";
     }
 
     @Override
