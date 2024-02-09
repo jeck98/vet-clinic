@@ -13,7 +13,18 @@ public class Dog extends Pet {
 
     public Dog() {}
 
-
+    @Override
+    public String toString() {
+        return "Pet {"
+                + "type = " + getType()
+                + ", sex = " + getSex()
+                + ", age = " + getAge()
+                + ", name = " + getName()
+                + ", size = " + getSize()
+                + ", ownerName = " + getOwnerName()
+                + ", registrationDate = " + getRegistrationDate().format(FORMATTER)
+                + "}";
+    }
 
     public Dog(Size size) {
         this.size = size;
@@ -27,18 +38,7 @@ public class Dog extends Pet {
     public Dog(HealthState healthState) {
         this.healthState = healthState;
     }
-
-    @Override
-    public String toString() {
-        return "{type = " + getType()
-                + ", name = " + getName()
-                + ", age = " + getAge()
-                + ", sex = " + getSex()
-                + ", size = " + size
-                + ", registrationDate = " + registrationDate.format(FORMATTER)
-                + "}";
-    }
-
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,6 +78,17 @@ public class Dog extends Pet {
 
         Size(int value) {
             this.value = value;
+        }
+
+        public static Size fromString(String value) {
+            for (Size size : values()) {
+                if (size.toString().equals(value)) {
+                    return size;
+                }
+            }
+            System.out.println("Unable to parse value '" + value + "'. Using default value: " + UNKNOWN);
+
+            return UNKNOWN;
         }
 
         public int getValue() {
