@@ -53,7 +53,7 @@ public class PetService {
             }
         }
 
-/*        if (type.equals(DOG_TYPE)) { //Use for remove exception
+/*        if (type.equals(DOG_TYPE )) { //Use for remove exception
             System.out.print("Size (XS / S / M / L / XL): ");
             String size = Main.SCANNER.nextLine();
             ((Dog) pet).setSize(Dog.Size.fromString(size));
