@@ -5,6 +5,8 @@ import main.java.com.magicvet.model.Cat;
 import main.java.com.magicvet.model.Dog;
 import main.java.com.magicvet.model.Pet;
 
+import java.util.InputMismatchException;
+
 public class PetService {
 
     private static final String DOG_TYPE = "dog";
@@ -42,8 +44,20 @@ public class PetService {
         if (type.equals(DOG_TYPE)) {
             System.out.print("Size (XS / S / M / L / XL): ");
             String size = Main.SCANNER.nextLine();
-            ((Dog) pet).setSize(Dog.Size.fromString(size));
+
+            try {
+                ((Dog) pet).setSize(Dog.Size.valueOf(size));
+            } catch (IllegalArgumentException e) {
+                ((Dog) pet).setSize(Dog.Size.UNKNOWN);
+                System.out.println("Unable to parse value '" + size + "'. Using default value: " + Dog.Size.UNKNOWN);
+            }
         }
+
+/*        if (type.equals(DOG_TYPE)) { //Use for remove exception
+            System.out.print("Size (XS / S / M / L / XL): ");
+            String size = Main.SCANNER.nextLine();
+            ((Dog) pet).setSize(Dog.Size.fromString(size));
+        }*/
 
         return pet;
     }

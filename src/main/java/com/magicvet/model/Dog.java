@@ -38,7 +38,7 @@ public class Dog extends Pet {
     public Dog(HealthState healthState) {
         this.healthState = healthState;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -80,7 +80,7 @@ public class Dog extends Pet {
             this.value = value;
         }
 
-        public static Size fromString(String value) {
+/*       public static Size fromString(String value) { //Use for remove exception
             for (Size size : values()) {
                 if (size.toString().equals(value)) {
                     return size;
@@ -89,7 +89,7 @@ public class Dog extends Pet {
             System.out.println("Unable to parse value '" + value + "'. Using default value: " + UNKNOWN);
 
             return UNKNOWN;
-        }
+        }*/
 
         public int getValue() {
             return value;
